@@ -14,17 +14,15 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-def allureVersion = "2.17.3"
-
 allure {
     report {
-        version = allureVersion
+        version.set("2.17.3")
     }
     adapter {
-        adapter.aspectjWeaver = true
+        aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion = allureVersion
+                adapterVersion.set("2.17.3")
             }
         }
     }
