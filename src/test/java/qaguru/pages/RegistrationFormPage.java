@@ -11,11 +11,9 @@ public class RegistrationFormPage {
     RegistrationFormData data = new RegistrationFormData();
 
     //    actions
-    public RegistrationFormPage openPage() {
+    public void openPage() {
         Selenide.open("/automation-practice-form");
         zoom(0.75); // иначе не дает кликнуть по штату и городу
-
-        return this;
     }
 
     public RegistrationFormPage setFirstName() {
@@ -89,17 +87,13 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage setCity() {
+    public void setCity() {
         $("#city").click();
         $$("[id^='react-select-4-option']").findBy(text(data.city)).click();
-
-        return this;
     }
 
-    public RegistrationFormPage submitForm() {
+    public void submitForm() {
         data.formSubmitButton.click();
-
-        return this;
     }
 
     public RegistrationFormPage checkFormResult() {
